@@ -484,7 +484,7 @@ export class ProtocolMessagesReconstructionService {
               simpleSecurityProfile.privateKeyEncryption, message.primaryData).subscribe((jsonObject: string) => {
 
               // Parse decrypted object in JSON
-              const object: { sessionKey: string, nonce: number, identity: string } = JSON.parse(jsonObject);
+              const object: { sessionKey: string, nonce: string, identity: string } = JSON.parse(jsonObject);
               result.nonce = object.nonce;
               result.identity = object.identity;
 
